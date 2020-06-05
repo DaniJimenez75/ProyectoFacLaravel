@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
+    
 });
+Route::post('/inicio','loginController@login');
+Route::get('/cliente','loginController@paginaCliente');
+Route::get('/trabajador','loginController@paginaTrabajador');
+
+
+
