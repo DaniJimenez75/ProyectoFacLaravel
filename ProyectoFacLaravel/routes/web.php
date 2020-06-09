@@ -22,5 +22,19 @@ Route::post('/inicio','loginController@login');
 Route::get('/cliente','loginController@paginaCliente');
 Route::get('/trabajador','loginController@paginaTrabajador');
 
+//-------------------------PAGINA TRABAJADOR--------------------------------------
+Route::get('/clientesTrabajadores','trabajadoresController@apartadoClientes');
+Route::get('/trabajador/formAgregarCliente','trabajadoresController@formAgregarCliente');
+Route::post('/trabajador/agregarCliente','trabajadoresController@AgregarCliente');
+Route::get('/trabajador/formAgregarCliente','trabajadoresController@formAgregarCliente');
+
+Route::get('/trabajador/formEditarCliente/{id}','trabajadoresController@formEditarCliente');
+Route::post('/trabajador/editarCliente/{id}','trabajadoresController@editarCliente');
+
+
+
+
+
+
 
 

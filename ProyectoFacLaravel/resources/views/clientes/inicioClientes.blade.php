@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,9 +35,7 @@
     </ul>
   </div>
 </nav>
-<h1 style="text-align:center"> Bienvenido Trabajador</h1>
-@if(session('status'))
-	  {{session('status')}}
-    @endif
+<h1 style="text-align:center"> Bienvenido Clientes</h1>
+
 </body>
 </html>

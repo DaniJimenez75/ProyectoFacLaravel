@@ -9,12 +9,12 @@ class loginController extends Controller
 {
 
     public function paginaTrabajador(){
-        return view('inicioTrabajadores');
+        return view('trabajadores.inicioTrabajadores');
 
     }
 
     public function paginaCliente(){
-        return view('inicioClientes');
+        return view('clientes.inicioClientes');
 
     }
 
@@ -25,20 +25,19 @@ class loginController extends Controller
         $rol = $request->rol;
 
        
-
-        $clientes = Clientes::all();
-        foreach($clientes as $g){
-            if($g->username == $username && $g->password == $password){
-                return redirect('/cliente')->with('status','Alta correcta');
-
-            }else{
-                return redirect('/')->with('status','Datos introducidos no correctos');
-
-            }
-        }
+        if($rol == "Cliente"){
+            $clientes = Clientes::all();
+            foreach($clientes as $g){
+                if($g->username == $username && $g->password == $password){
+                    return redirect('/cliente')->with('status','Alta correcta');
     
-
-        $trabajador = Trabajadores::all();
+                }else{
+                    return redirect('/')->with('status','Datos introducidos no correctos');
+    
+                }
+            }
+        }else{
+            $trabajador = Trabajadores::all();
         foreach($trabajador as $g){
             if($g->username == $username && $g->password == $password){
                 return redirect('/trabajador')->with('status','Alta correcta');
@@ -48,6 +47,9 @@ class loginController extends Controller
 
             }
         }
+        }
+
+        
     }
 }
     
